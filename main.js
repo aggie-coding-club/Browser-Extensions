@@ -1,1 +1,3 @@
-console.log("something here");
+
+let x = 5;
+let y = x +3;
