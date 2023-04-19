@@ -70,7 +70,8 @@ window.addEventListener('load',function() {
             p[i].style.color = "#FFF";
         }
     
-    
+    p = document.getElementsByClassName("large ic-Dashboard-header__layout");
+    p[0].style.backgroundColor = '#242222';
     
     //https://www.youtube.com/embed/CHFif_y2TyM
     //https://www.youtube.com/embed/Kl2v9ydanrI
