@@ -17,7 +17,7 @@ window.addEventListener('load',function() {
     p.style.background = '#242222';
     
     
-    
+    //ic-DashboardCard__box__container
     
     //p = document.getElementById("header");
     //p.style.background = '#333333';
@@ -33,7 +33,13 @@ window.addEventListener('load',function() {
     block_to_insert.src = "https://www.youtube.com/embed/jfKfPfyJRdk"
      
     container_block = document.getElementById( 'content-wrapper' );
+    //container_block = document.getElementById("DashboardCard_Container");
+    //container_block = container_block.parentNode;
     container_block.appendChild( block_to_insert );
+    //let bleh = undefined;
+    //container_block.insertBefore(block_to_insert, bleh );
+    //container_block.insertBefore(block_to_insert, undefined);
+    
     
     
     let e = document.createElement( 'iframe' );
@@ -41,6 +47,30 @@ window.addEventListener('load',function() {
     
         let d = document.getElementById( 'content-wrapper' );
         d.appendChild( e );
+    
+    
+    
+    p = document.getElementsByClassName("fOyUs_bGBk fbyHH_bGBk fbyHH_vIby");
+        for (let i = 0; i < p.length; i++){
+            p[i].style.color = "#FFF";
+            p[i].style.textDecorationColor = "#500000";
+        }
+    
+    
+    p = document.getElementsByClassName("fOyUs_bGBk fOyUs_cuDs ctrLD_bGBk ctrLD_doqw ctrLD_dnHs");
+    
+        for (let i = 0; i < p.length; i++){
+            p[i].style.color = "#CE795B";
+        }
+    
+    
+    
+    p = document.getElementsByClassName("event-details__title recent_feedback_title");
+        for (let i = 0; i < p.length; i++){
+            p[i].style.color = "#FFF";
+        }
+    
+    
     
     //https://www.youtube.com/embed/CHFif_y2TyM
     //https://www.youtube.com/embed/Kl2v9ydanrI
