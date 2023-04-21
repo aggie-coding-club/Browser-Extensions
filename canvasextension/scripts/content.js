@@ -35,7 +35,7 @@ window.addEventListener('load',function() {
     container_block = document.getElementById( 'content-wrapper' );
     //container_block = document.getElementById("DashboardCard_Container");
     //container_block = container_block.parentNode;
-    container_block.appendChild( block_to_insert );
+    //container_block.appendChild( block_to_insert ); --------------real one
     //let bleh = undefined;
     //container_block.insertBefore(block_to_insert, bleh );
     //container_block.insertBefore(block_to_insert, undefined);
@@ -46,7 +46,7 @@ window.addEventListener('load',function() {
         e.src = "https://www.youtube.com/embed/CHFif_y2TyM"
     
         let d = document.getElementById( 'content-wrapper' );
-        d.appendChild( e );
+        //d.appendChild( e ); ----------------real one
     
     
     
@@ -70,13 +70,114 @@ window.addEventListener('load',function() {
             p[i].style.color = "#FFF";
         }
     
+    
     p = document.getElementsByClassName("large ic-Dashboard-header__layout");
     p[0].style.backgroundColor = '#242222';
+    
+    
+    
+    p = document.getElementsByClassName('fOyUs_bGBk blnAQ_bGBk blnAQ_fCtg blnAQ_drOs');
+    p[0].innerText = "lofi canvas";
+    p[0].style.color = '#CE795B';
+    
+    
+    //grades header
+    p = document.getElementsByClassName('h2 shared-space');
+    p[0].style.color = '#CE795B';
+    p[0].innerText = "grades!";
+    
+    //to do
+    p = document.getElementsByClassName("todo-list-header");
+    p[0].style.color = "#FFF";
+    
+    //card color
+    p = document.getElementsByClassName("ic-DashboardCard__header_hero");
+        for (let i = 0; i < p.length; i++){
+            p[i].style.backgroundColor = "#CE795B";
+        }
+    
+    
+    
+    //assignments and quizes
+    p = document.getElementsByClassName("todo-list-header");
+        for (let i = 0; i < p.length; i++){
+            p[i].style.color = "#fff";}
+    
+    
+    //little calendars
+    p = document.getElementsByClassName("dUOHu_bGBk dUOHu_drOs dUOHu_eXrk cGqzL_bGBk ToDoSidebarItem__Icon");
+    for (let i = 0; i < p.length; i++){
+        p[i].style.color = "#fff";}
+    
+    //more button
+    p = document.getElementsByClassName("more_link");
+    p[0].style.color = "#fff";
+    
+    //cards
+    p = document.getElementsByClassName("ic-DashboardCard__header_hero");
+    for (let i = 0; i < p.length; i++){
+        p[i].style.opacity = '100';
+        p[i].style.backgroundColor = "#CE795B";
+        //p[i].style.opacity = '100'; //for pictures
+        }
+    //3 dots circle
+    p = document.getElementsByClassName("icon-more");
+    for (let i = 0; i < p.length; i++){
+        p[i].style.backgroundColor = "#CE795B";}
+    
+    //show all button
+    p = document.getElementsByClassName("fOyUs_bGBk fbyHH_bGBk fbyHH_bSMN");
+    p[0].style.color = "#fff";
+    
+    
+    
+    p = document.getElementsByClassName("ic-DashboardCard__header_hero");
+    
+    block_to_insert = document.createElement( 'iframe' );
+    block_to_insert2 = document.createElement( 'iframe' );
+    block_to_insert3= document.createElement( 'iframe' );
+    block_to_insert4 = document.createElement( 'iframe' );
+    
+    block_to_insert.src = "https://www.youtube.com/embed/jfKfPfyJRdk";
+    block_to_insert2.src = "https://www.youtube.com/embed/CHFif_y2TyM";
+    block_to_insert3.src = "https://www.youtube.com/embed/aG01KIXWrbU";
+    block_to_insert4.src = "https://www.youtube.com/embed/3JbBbY4S11w"; //bleh
+    
+    container_block = document.getElementById( 'DashboardCard_Container');
+    p[0].insertBefore(block_to_insert, null);
+    p[1].insertBefore(block_to_insert2, null);
+    p[2].insertBefore(block_to_insert3,null);
+    p[3].insertBefore(block_to_insert4,null); //bleh
+    
+    //x's
+    p = document.getElementsByClassName("fQfxa_caGd fQfxa_VCXp fQfxa_buuG fQfxa_EMjX fQfxa_bCUx fQfxa_bVmg fQfxa_bIHL");
+    for (let i = 0; i < p.length; i++){
+        p[i].style.color = "#CE795B";}
+    
+    
+    p = document.getElementsByClassName("fQfxa_eoCh");
+    for (let i = 0; i < p.length; i++){
+        p[i].style.color = "#CE795B";}
+    
+    
+    
+    //bottom of cards
+    //p = document.getElementsByClassName("ic-DashboardCard__action-container");
+    //for (let i = 0; i < p.length; i++){
+    //    p[i].style.backgroundColor = "#CE795B";}
+    
+    //middle
+    //p = document.getElementsByClassName("ic-DashboardCard__header_content");
+    //for (let i = 0; i < p.length; i++){
+    //    p[i].style.backgroundColor = "#CE795B";}
+    
+    
+    
+    //https://stackoverflow.com/questions/66259592/how-to-resize-chrome-browser-window-with-an-extension
     
     //https://www.youtube.com/embed/CHFif_y2TyM
     //https://www.youtube.com/embed/Kl2v9ydanrI
     //loifi
     //https://www.youtube.com/embed/jfKfPfyJRdk
     //https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator&theme=0
-    // Your code here...
 })();
