@@ -4,8 +4,8 @@
 window.addEventListener('load',function() {
     'use strict';
 
-    p = document.getElementsByClassName("ic-Dashboard-header");
-    btn = document.createElement("button");
+    let p = document.getElementsByClassName("ic-Dashboard-header");
+    let btn = document.createElement("button");
     btn.style.height = '50px'; //window
     btn.style.width = '500px';
     btn.innerHTML = "Lofi Mode";
@@ -140,17 +140,21 @@ window.addEventListener('load',function() {
         p[i].style.backgroundColor = "#CE795B";}
     
     //show all button
-    p = document.getElementsByClassName("fOyUs_bGBk fbyHH_bGBk fbyHH_bSMN");
-    p[0].style.color = "#fff";
-    
+    var loadInterval = setInterval(function (){
+        var p = document.getElementsByClassName("fOyUs_bGBk fbyHH_bGBk fbyHH_bSMN");
+        if(p[0]){
+            p[0].style.color = "#ffffff";
+            clearInterval(loadInterval);
+        }
+    }, 100);
     
     
     p = document.getElementsByClassName("ic-DashboardCard__header_hero");
     
     block_to_insert = document.createElement( 'iframe' );
-    block_to_insert2 = document.createElement( 'iframe' );
-    block_to_insert3= document.createElement( 'iframe' );
-    block_to_insert4 = document.createElement( 'iframe' );
+    let block_to_insert2 = document.createElement( 'iframe' );
+    let block_to_insert3= document.createElement( 'iframe' );
+    let block_to_insert4 = document.createElement( 'iframe' );
     
     block_to_insert.src = "https://www.youtube.com/embed/jfKfPfyJRdk";
     block_to_insert2.src = "https://www.youtube.com/embed/CHFif_y2TyM";
