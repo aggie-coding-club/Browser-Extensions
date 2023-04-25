@@ -4,11 +4,20 @@
 window.addEventListener('load',function() {
     'use strict';
 
+
+    console.log(window.innerWidth);
+    if (this.window.innerWidth < 1000)  {
+        this.window.resize(1000,1000); 
+        console.log("fuck")
+    }
+    console.log(window.innerWidth);
+    //half page wont load if button is pressed too fast
     let p = document.getElementsByClassName("ic-Dashboard-header");
     let btn = document.createElement("button");
     btn.style.height = '50px'; //window
     btn.style.width = '500px';
     btn.innerHTML = "Lofi Mode";
+    btn.style.borderBlockColor = "#CE795B";
     btn.style.color = "#CE795B"
     btn.style.backgroundColor = '#242222';
     p[0].appendChild(btn);
@@ -16,6 +25,8 @@ window.addEventListener('load',function() {
     btn.addEventListener("click", anthonyisabword);
     
     function anthonyisabword() {
+
+    btn.innerHTML = "Refresh page to go back to normal"
     
     p = document.getElementsByTagName("img");
     p[0].src = "https://yt3.ggpht.com/ytc/AKedOLTkvv3TyNLJYEWXsPdCsgg8fvSn9-Oj65GBhkAiEg=s800-c-k-c0x00ffffff-no-rj";
@@ -159,13 +170,13 @@ window.addEventListener('load',function() {
     block_to_insert.src = "https://www.youtube.com/embed/jfKfPfyJRdk";
     block_to_insert2.src = "https://www.youtube.com/embed/CHFif_y2TyM";
     block_to_insert3.src = "https://www.youtube.com/embed/aG01KIXWrbU";
-    block_to_insert4.src = "https://www.youtube.com/embed/3JbBbY4S11w";
+    block_to_insert4.src = "https://www.youtube.com/embed/Vcg7sLDTICk";
     
     container_block = document.getElementById( 'DashboardCard_Container');
     p[0].insertBefore(block_to_insert, null);
     p[1].insertBefore(block_to_insert2, null);
     p[2].insertBefore(block_to_insert3,null);
-    //p[3].insertBefore(block_to_insert4,null);
+    p[3].insertBefore(block_to_insert4,null);
     
     //x's
     p = document.getElementsByClassName("fQfxa_caGd fQfxa_VCXp fQfxa_buuG fQfxa_EMjX fQfxa_bCUx fQfxa_bVmg fQfxa_bIHL");
@@ -208,6 +219,10 @@ window.addEventListener('load',function() {
             p[i].childNodes[0].style.color = "#CE795B";}
     
         }
+
+    //refresh to revert
+
+
     
     //https://stackoverflow.com/questions/66259592/how-to-resize-chrome-browser-window-with-an-extension
     
