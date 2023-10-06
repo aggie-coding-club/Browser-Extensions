@@ -4,7 +4,7 @@
 window.addEventListener('load',function() {
     'use strict';
 
-    // Check the window width
+    // Check the window width - this doesnt work
     if (window.innerWidth < 1000) {
     // Adjust the width of a container element
         var container = document.getElementById("container"); // Replace "container" with your element's ID
@@ -18,9 +18,10 @@ window.addEventListener('load',function() {
     btn.style.width = '300px';
     btn.innerHTML = "Lofi Mode";
     btn.style.fontFamily = "Merienda";
-    btn.style.borderBlockColor = "#CE795B";
-    btn.style.color = "#CE795B"
-    btn.style.backgroundColor = '#242222';
+    btn.style.fontSize = "25px";
+    btn.style.borderBlockColor = "#831010";
+    btn.style.color = "#831010"
+    btn.style.backgroundColor = '#FFFFFF';
     btn.style.borderRadius = '5px'; // Round the corners
     btn.style.boxShadow = '0px 3px 5px rgba(0,0,0,0.2)';
     btn.style.transition = "background-color 0.3s ease";
@@ -43,6 +44,9 @@ window.addEventListener('load',function() {
     //buttonclicked = true;
     //button after click
     btn.innerHTML = "Refresh page to go back to normal"
+    btn.style.color = "#CE795B"
+    btn.style.borderBlockColor = "#CE795B"
+    btn.style.backgroundColor = '#242222';
     //btn.style.fontFamily = "Merienda";
     
     //coffie cup and lofi girl in corners
@@ -185,13 +189,13 @@ window.addEventListener('load',function() {
     let block_to_insert2 = document.createElement( 'iframe' );
     let block_to_insert3= document.createElement( 'iframe' );
     let block_to_insert4 = document.createElement( 'iframe' );
-    let block_to_insert5 = document.createElement( 'iframe' ); //if logic for more than 4 classes ?
+    //let block_to_insert5 = document.createElement( 'img' ); //if logic for more than 4 classes ?
     
     block_to_insert.src = "https://www.youtube.com/embed/jfKfPfyJRdk";
     block_to_insert2.src = "https://www.youtube.com/embed/CHFif_y2TyM";
     block_to_insert3.src = "https://www.youtube.com/embed/aG01KIXWrbU";
     block_to_insert4.src = "https://www.youtube.com/embed/Vcg7sLDTICk";
-    block_to_insert5.src = "";
+    //block_to_insert5.src = "../images/lofiracoon.jpg";
 
     length = p.length;
     
@@ -202,8 +206,8 @@ window.addEventListener('load',function() {
     p[2].insertBefore(block_to_insert3,null);
     p[3].insertBefore(block_to_insert4,null);
     //if i find another video, is not declared so nothing inserted
-    if (length == 4)
-        p[4].insertBefore(block_to_insert5,null);
+    //if (length == 4)
+    //p[4].insertBefore(block_to_insert5,null);
 
 
     
@@ -247,15 +251,153 @@ window.addEventListener('load',function() {
         for (let i = 0; i < p.length; i++){
             p[i].childNodes[0].style.color = "#CE795B";}
 
+
+    //change button colors after click
+    stopButton.style.borderBlockColor = "#CE795B";
+    stopButton.style.color = "#CE795B";
+    stopButton.style.backgroundColor = '#242222';
+
+    startButton.style.borderBlockColor = "#CE795B";
+    startButton.style.color = "#CE795B";
+    startButton.style.backgroundColor = '#242222';
+
+    timer.style.borderBlockColor = "#CE795B";
+    timer.style.color = "#CE795B";
+    timer.style.backgroundColor = '#242222';
+
+    //makes it to where you can only click once
     localStorage.setItem("buttonClicked", "true");
     btn.disabled = true;
     btn.removeEventListener("click", buttonClickHandler);
     }
 
     //refresh to revert
-
-
+    // btn.style.height = '50px'; //window
+    // btn.style.width = '300px';
+    // btn.innerHTML = "Lofi Mode";
+    // btn.style.fontFamily = "Merienda";
+    // btn.style.borderBlockColor = "#CE795B";
+    // btn.style.color = "#CE795B"
+    // btn.style.backgroundColor = '#242222';
+    // btn.style.borderRadius = '5px'; // Round the corners
+    // btn.style.boxShadow = '0px 3px 5px rgba(0,0,0,0.2)';
+    // btn.style.transition = "background-color 0.3s ease";
+    // p[0].appendChild(btn);
     
+    // btn.addEventListener("mouseover", function() {
+    //     btn.style.transform = "translateY(-5px)"; // Move the button 5 pixels up on hover
+    // });
+    
+    // btn.addEventListener("mouseout", function() {
+    //     btn.style.transform = "translateY(0)"; // Reset the button's position when the mouse leaves
+    // });
+    //pomodoro timer
+    let timerplace = document.getElementsByClassName("ic-Dashboard-header");
+    
+    let startButton = document.createElement("button");
+    timerplace[0].appendChild(startButton);
+    startButton.innerText = "Start";
+    startButton.style.backgroundColor = '#FFFFFF';
+    startButton.style.borderBlockColor = "#831010";
+    startButton.style.color = "#831010"
+    startButton.style.height = '50px'; //window
+    startButton.style.width = '100px';
+    startButton.style.fontFamily = "Merienda";
+    startButton.style.fontSize = "25px";
+    startButton.style.borderRadius = '5px'; // Round the corners
+    startButton.style.boxShadow = '0px 3px 5px rgba(0,0,0,0.2)';
+    startButton.style.transition = "background-color 0.3s ease";
+
+    startButton.addEventListener("mouseover", function() {
+        startButton.style.transform = "translateY(-5px)"; // Move the button 5 pixels up on hover
+     });
+    
+     startButton.addEventListener("mouseout", function() {
+        startButton.style.transform = "translateY(0)"; // Reset the button's position when the mouse leaves
+     });
+
+    let stopButton = document.createElement("button");
+    timerplace[0].appendChild(stopButton);
+    stopButton.innerText = "Clear";
+    stopButton.style.backgroundColor = '#FFFFFF';
+    stopButton.style.borderBlockColor = "#831010";
+    stopButton.style.color = "#831010"
+    stopButton.style.height = '50px'; //window
+    stopButton.style.width = '100px';
+    stopButton.style.fontFamily = "Merienda";
+    stopButton.style.fontSize = "25px";
+    stopButton.style.borderRadius = '5px'; // Round the corners
+    stopButton.style.boxShadow = '0px 3px 5px rgba(0,0,0,0.2)';
+    stopButton.style.transition = "background-color 0.3s ease";
+
+    stopButton.addEventListener("mouseover", function() {
+        stopButton.style.transform = "translateY(-5px)"; // Move the button 5 pixels up on hover
+     });
+    
+     stopButton.addEventListener("mouseout", function() {
+        stopButton.style.transform = "translateY(0)"; // Reset the button's position when the mouse leaves
+     });
+    
+
+    let timer = document.createElement("button");
+    timerplace[0].appendChild(timer);
+    let timestring = "00:00:00";
+    timer.innerText = timestring;
+    timer.style.backgroundColor = '#FFFFFF';
+    timer.style.borderBlockColor = "#831010";
+    timer.style.color = "#831010"
+    timer.style.height = '50px'; //window
+    timer.style.width = '200px';
+    timer.style.fontFamily = "Merienda";
+    timer.style.fontSize = "25px";
+    timer.style.borderRadius = '5px'; // Round the corners
+    timer.style.boxShadow = '0px 3px 5px rgba(0,0,0,0.2)';
+    timer.style.transition = "background-color 0.3s ease";
+
+
+
+    let intervalId; // Variable to store the interval ID
+
+    function startTimer() {
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+
+    // Update the timer every second
+    intervalId = setInterval(function() {
+        seconds++;
+        if (seconds == 60) {
+            seconds = 0;
+            minutes++;
+        }
+        if (minutes == 60) {
+            minutes = 0;
+            hours++;
+        }
+        // Format the time as HH:MM:SS
+        const timestring = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        // Update the timer display
+        timer.textContent = timestring;
+        //localStorage.setItem("buttonClicked", "true");
+        startButton.disabled = true;
+        startButton.removeEventListener("click", buttonClickHandler);
+    }, 1000);
+}
+
+    function stopTimer() {
+        clearInterval(intervalId); // Stop the timer
+        timestring = "00:00:00";
+        timer.textContent = timestring;
+        startButton.addEventListener("click", startTimer); //adds event listener after stop button
+        startButton.disabled = false;
+    }
+
+// Event listeners for start and stop buttons
+    startButton.addEventListener("click", startTimer);
+    stopButton.addEventListener("click", stopTimer);
+
+
+
     //https://stackoverflow.com/questions/66259592/how-to-resize-chrome-browser-window-with-an-extension
     
     //https://www.youtube.com/embed/CHFif_y2TyM
