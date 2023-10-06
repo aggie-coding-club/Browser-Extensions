@@ -19,9 +19,9 @@ window.addEventListener('load',function() {
     btn.innerHTML = "Lofi Mode";
     btn.style.fontFamily = "Merienda";
     btn.style.fontSize = "25px";
-    btn.style.borderBlockColor = "#CE795B";
-    btn.style.color = "#CE795B"
-    btn.style.backgroundColor = '#242222';
+    btn.style.borderBlockColor = "#831010";
+    btn.style.color = "#831010"
+    btn.style.backgroundColor = '#FFFFFF';
     btn.style.borderRadius = '5px'; // Round the corners
     btn.style.boxShadow = '0px 3px 5px rgba(0,0,0,0.2)';
     btn.style.transition = "background-color 0.3s ease";
@@ -44,6 +44,9 @@ window.addEventListener('load',function() {
     //buttonclicked = true;
     //button after click
     btn.innerHTML = "Refresh page to go back to normal"
+    btn.style.color = "#CE795B"
+    btn.style.borderBlockColor = "#CE795B"
+    btn.style.backgroundColor = '#242222';
     //btn.style.fontFamily = "Merienda";
     
     //coffie cup and lofi girl in corners
@@ -249,6 +252,19 @@ window.addEventListener('load',function() {
             p[i].childNodes[0].style.color = "#CE795B";}
 
 
+    //change button colors after click
+    stopButton.style.borderBlockColor = "#CE795B";
+    stopButton.style.color = "#CE795B";
+    stopButton.style.backgroundColor = '#242222';
+
+    startButton.style.borderBlockColor = "#CE795B";
+    startButton.style.color = "#CE795B";
+    startButton.style.backgroundColor = '#242222';
+
+    timer.style.borderBlockColor = "#CE795B";
+    timer.style.color = "#CE795B";
+    timer.style.backgroundColor = '#242222';
+
     //makes it to where you can only click once
     localStorage.setItem("buttonClicked", "true");
     btn.disabled = true;
@@ -281,8 +297,9 @@ window.addEventListener('load',function() {
     let startButton = document.createElement("button");
     timerplace[0].appendChild(startButton);
     startButton.innerText = "Start";
-    startButton.style.backgroundColor = '#242222';
-    startButton.style.color = "#CE795B"
+    startButton.style.backgroundColor = '#FFFFFF';
+    startButton.style.borderBlockColor = "#831010";
+    startButton.style.color = "#831010"
     startButton.style.height = '50px'; //window
     startButton.style.width = '100px';
     startButton.style.fontFamily = "Merienda";
@@ -302,8 +319,9 @@ window.addEventListener('load',function() {
     let stopButton = document.createElement("button");
     timerplace[0].appendChild(stopButton);
     stopButton.innerText = "Clear";
-    stopButton.style.backgroundColor = '#242222';
-    stopButton.style.color = "#CE795B"
+    stopButton.style.backgroundColor = '#FFFFFF';
+    stopButton.style.borderBlockColor = "#831010";
+    stopButton.style.color = "#831010"
     stopButton.style.height = '50px'; //window
     stopButton.style.width = '100px';
     stopButton.style.fontFamily = "Merienda";
@@ -325,8 +343,9 @@ window.addEventListener('load',function() {
     timerplace[0].appendChild(timer);
     let timestring = "00:00:00";
     timer.innerText = timestring;
-    timer.style.backgroundColor = '#242222';
-    timer.style.color = "#CE795B"
+    timer.style.backgroundColor = '#FFFFFF';
+    timer.style.borderBlockColor = "#831010";
+    timer.style.color = "#831010"
     timer.style.height = '50px'; //window
     timer.style.width = '200px';
     timer.style.fontFamily = "Merienda";
