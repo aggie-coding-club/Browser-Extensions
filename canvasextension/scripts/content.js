@@ -247,15 +247,129 @@ window.addEventListener('load',function() {
         for (let i = 0; i < p.length; i++){
             p[i].childNodes[0].style.color = "#CE795B";}
 
+
+    //makes it to where you can only click once
     localStorage.setItem("buttonClicked", "true");
     btn.disabled = true;
     btn.removeEventListener("click", buttonClickHandler);
     }
 
     //refresh to revert
-
-
+    // btn.style.height = '50px'; //window
+    // btn.style.width = '300px';
+    // btn.innerHTML = "Lofi Mode";
+    // btn.style.fontFamily = "Merienda";
+    // btn.style.borderBlockColor = "#CE795B";
+    // btn.style.color = "#CE795B"
+    // btn.style.backgroundColor = '#242222';
+    // btn.style.borderRadius = '5px'; // Round the corners
+    // btn.style.boxShadow = '0px 3px 5px rgba(0,0,0,0.2)';
+    // btn.style.transition = "background-color 0.3s ease";
+    // p[0].appendChild(btn);
     
+    // btn.addEventListener("mouseover", function() {
+    //     btn.style.transform = "translateY(-5px)"; // Move the button 5 pixels up on hover
+    // });
+    
+    // btn.addEventListener("mouseout", function() {
+    //     btn.style.transform = "translateY(0)"; // Reset the button's position when the mouse leaves
+    // });
+    //pomodoro timer
+    let timerplace = document.getElementsByClassName("ic-Dashboard-header");
+    
+    let startButton = document.createElement("button");
+    timerplace[0].appendChild(startButton);
+    startButton.innerText = "Start";
+    startButton.style.backgroundColor = '#242222';
+    startButton.style.color = "#CE795B"
+    startButton.style.height = '50px'; //window
+    startButton.style.width = '100px';
+    startButton.style.fontFamily = "Merienda";
+    startButton.style.borderRadius = '5px'; // Round the corners
+    startButton.style.boxShadow = '0px 3px 5px rgba(0,0,0,0.2)';
+    startButton.style.transition = "background-color 0.3s ease";
+
+    startButton.addEventListener("mouseover", function() {
+        startButton.style.transform = "translateY(-5px)"; // Move the button 5 pixels up on hover
+     });
+    
+     startButton.addEventListener("mouseout", function() {
+        startButton.style.transform = "translateY(0)"; // Reset the button's position when the mouse leaves
+     });
+
+    let stopButton = document.createElement("button");
+    timerplace[0].appendChild(stopButton);
+    stopButton.innerText = "Stop";
+    stopButton.style.backgroundColor = '#242222';
+    stopButton.style.color = "#CE795B"
+    stopButton.style.height = '50px'; //window
+    stopButton.style.width = '100px';
+    stopButton.style.fontFamily = "Merienda";
+    stopButton.style.borderRadius = '5px'; // Round the corners
+    stopButton.style.boxShadow = '0px 3px 5px rgba(0,0,0,0.2)';
+    stopButton.style.transition = "background-color 0.3s ease";
+
+    stopButton.addEventListener("mouseover", function() {
+        stopButton.style.transform = "translateY(-5px)"; // Move the button 5 pixels up on hover
+     });
+    
+     stopButton.addEventListener("mouseout", function() {
+        stopButton.style.transform = "translateY(0)"; // Reset the button's position when the mouse leaves
+     });
+    
+
+    let timer = document.createElement("button");
+    timerplace[0].appendChild(timer);
+    let timestring = "00:00:00";
+    timer.innerText = timestring;
+    timer.style.backgroundColor = '#242222';
+    timer.style.color = "#CE795B"
+    timer.style.height = '50px'; //window
+    timer.style.width = '200px';
+    timer.style.fontFamily = "Merienda";
+    timer.style.borderRadius = '5px'; // Round the corners
+    timer.style.boxShadow = '0px 3px 5px rgba(0,0,0,0.2)';
+    timer.style.transition = "background-color 0.3s ease";
+
+
+
+    let intervalId; // Variable to store the interval ID
+
+    function startTimer() {
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+
+    // Update the timer every second
+    intervalId = setInterval(function() {
+        seconds++;
+        if (seconds == 60) {
+            seconds = 0;
+            minutes++;
+        }
+        if (minutes == 60) {
+            minutes = 0;
+            hours++;
+        }
+
+        // Format the time as HH:MM:SS
+        const timestring = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        // Update the timer display
+        timer.textContent = timestring;
+    }, 1000);
+}
+
+    function stopTimer() {
+        clearInterval(intervalId); // Stop the timer
+        timestring = "00:00:00";
+        timer.textContent = timestring;}
+
+// Event listeners for start and stop buttons
+    startButton.addEventListener("click", startTimer);
+    stopButton.addEventListener("click", stopTimer);
+
+
     //https://stackoverflow.com/questions/66259592/how-to-resize-chrome-browser-window-with-an-extension
     
     //https://www.youtube.com/embed/CHFif_y2TyM
