@@ -11,7 +11,7 @@ window.addEventListener('load',function() {
         if (container) {
             container.style.minWidth = "1000px";}}
 
-    //half page wont load if button is pressed too fast
+    //intitial button styles
     let p = document.getElementsByClassName("ic-Dashboard-header");
     let btn = document.createElement("button");
     btn.style.height = '50px'; //window
@@ -35,17 +35,35 @@ window.addEventListener('load',function() {
         btn.style.transform = "translateY(0)"; // Reset the button's position when the mouse leaves
     });
 
+    //make sure it cant be pressed when not at full size
+    function updateButtonState() {
+        const button = document.getElementById("myButton");
+        if (window.innerWidth >= 1000) {
+          btn.disabled = false;
+        } else {
+          btn.disabled = true;
+        }}
+
+    updateButtonState();
+
+    // Add an event listener for the window's resize event to update the button state
+    window.addEventListener("resize", updateButtonState);
     
-   
-    btn.addEventListener("click", anthonyisabword);
+    function addevent() {
+        btn.addEventListener("click", anthonyisabword);
+    }
+
+    //make sure someone cant press button before xtags load
+    setTimeout(addevent, 2000);
     
     //function that runs onn button click
     function anthonyisabword() {
     //buttonclicked = true;
     //button after click
-    btn.innerHTML = "Refresh page to go back to normal"
+    btn.innerHTML = "refresh page to undo"
+    btn.style.fontSize = "25px";
     btn.style.color = "#CE795B"
-    btn.style.borderBlockColor = "#CE795B"
+    btn.style.borderBlockColor = "#FFFFFF"
     btn.style.backgroundColor = '#242222';
     //btn.style.fontFamily = "Merienda";
     
@@ -189,13 +207,16 @@ window.addEventListener('load',function() {
     let block_to_insert2 = document.createElement( 'iframe' );
     let block_to_insert3= document.createElement( 'iframe' );
     let block_to_insert4 = document.createElement( 'iframe' );
-    //let block_to_insert5 = document.createElement( 'img' ); //if logic for more than 4 classes ?
+    let block_to_insert5 = document.createElement( 'iframe' ); //if logic for more than 4 classes ?
+    let block_to_insert6 = document.createElement('iframe');
     
     block_to_insert.src = "https://www.youtube.com/embed/jfKfPfyJRdk";
     block_to_insert2.src = "https://www.youtube.com/embed/CHFif_y2TyM";
     block_to_insert3.src = "https://www.youtube.com/embed/aG01KIXWrbU";
     block_to_insert4.src = "https://www.youtube.com/embed/Vcg7sLDTICk";
-    //block_to_insert5.src = "../images/lofiracoon.jpg";
+    block_to_insert5.src = "https://www.youtube.com/embed/EeoCV3XyY94?si=nFrbi0l1gkQigdXv"; //has ads :()
+    block_to_insert6.src = "https://www.youtube.com/embed/PXw7_u_6yGM?si=dM6yJio0EEV8GCso";
+
 
     length = p.length;
     
@@ -206,8 +227,11 @@ window.addEventListener('load',function() {
     p[2].insertBefore(block_to_insert3,null);
     p[3].insertBefore(block_to_insert4,null);
     //if i find another video, is not declared so nothing inserted
-    //if (length == 4)
-    //p[4].insertBefore(block_to_insert5,null);
+    if (length >= 4)    {
+        p[4].insertBefore(block_to_insert5,null);}
+    
+    if (length >= 5)    {
+        p[5].insertBefore(block_to_insert6,null);}
 
 
     
@@ -253,15 +277,17 @@ window.addEventListener('load',function() {
 
 
     //change button colors after click
-    stopButton.style.borderBlockColor = "#CE795B";
+    stopButton.style.borderBlockColor = "#FFFFFF";
     stopButton.style.color = "#CE795B";
     stopButton.style.backgroundColor = '#242222';
+    stopButton.innerText = "clear";
 
-    startButton.style.borderBlockColor = "#CE795B";
+    startButton.style.borderBlockColor = "#FFFFFF";
     startButton.style.color = "#CE795B";
     startButton.style.backgroundColor = '#242222';
+    startButton.innerText = "start";
 
-    timer.style.borderBlockColor = "#CE795B";
+    timer.style.borderBlockColor = "#FFFFFF";
     timer.style.color = "#CE795B";
     timer.style.backgroundColor = '#242222';
 
@@ -365,6 +391,12 @@ window.addEventListener('load',function() {
 
     // Update the timer every second
     intervalId = setInterval(function() {
+        // background.js (or content script, depending on your needs)
+        //var audio = new Audio("sound.mp3");
+
+        // Play the sound
+        //audio.play();
+
         seconds++;
         if (seconds == 60) {
             seconds = 0;
@@ -406,3 +438,6 @@ window.addEventListener('load',function() {
     //https://www.youtube.com/embed/jfKfPfyJRdk
     //https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator&theme=0
 })();
+
+
+//<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5Fz8zEE8gKZbMymlPSVLf4?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
